@@ -1,0 +1,166 @@
+/* Estilos para o formulário */
+.form {
+  max-width: 400px;
+  margin: 0 auto;
+  border: 1px solid darkgrey;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.form-titulo {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-field {
+  background-color: white;
+  width: 100%;
+  padding: 10px;
+  font-size: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-error {
+  color: red;
+  margin-top: 5px;
+  font-size: 8px;
+}
+
+/* Estilos para os botões */
+.button-container button {
+  padding: 8px;
+  font-size: 14px;
+  margin-top: 2px;
+  margin-left: 2px;
+}
+
+/* --------------------------------------------------*/
+
+.search-container {
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-container button {
+  margin-left: 5px;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.search-container input {
+  background-color: white;
+  padding: 8px;
+  font-size: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-left: 8px;
+}
+
+/* --------------------------------------------------*/
+.row.marketing {
+  margin-top: 20px;
+}
+
+.table {
+  margin-top: 20px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table th,
+.table td {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+th {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table tr:hover {
+  background-color: #ddd;
+}
+
+td {
+  vertical-align: middle;
+  font-size: 12px;
+}
+
+.table-button {
+  padding: 7px;
+  font-size: 14px;
+}
+
+.delete-button {
+  background-color: transparent;
+  display: inline-block;
+  transform: scale(0.8);
+}
+
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination li {
+  margin: 0 4px;
+}
+
+.pagination a {
+  font-size: 12px;
+  text-decoration: none;
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.pagination a:hover {
+  background-color: #f2f2f2;
+}
+
+.modal {
+  text-align: center;
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+.modal-title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.modal-body {
+  margin-top: 20px;
+}
