@@ -28,14 +28,7 @@ const NavUser = () => {
           <Modal show={isModalOpen} onHide={toggleModal}>
             <Modal.Header closeButton></Modal.Header>
             <Modal.Body>
-              <nav className="navbar-nav">
-                <a className="nav-item nav-link" href="#">
-                  Lista de Desejos
-                </a>
-                <a className="nav-item nav-link" href="#">
-                  Teste
-                </a>
-              </nav>
+              <nav className="navbar-nav"></nav>
             </Modal.Body>
             <Modal.Footer>
               <Button variant="secondary" onClick={toggleModal}>
