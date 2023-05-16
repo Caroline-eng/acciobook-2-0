@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
 import Modal from "react-bootstrap/Modal";
