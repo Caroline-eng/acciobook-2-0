@@ -56,13 +56,46 @@ const TableBook = () => {
     }
   };
 
+  const handleSearch = (results) => {
+    setFilteredBooks(results);
+    setPageNumber(0);
+  };
+
+  const handleReset = async () => {
+    try {
+      const response = await axios.get(`${BASE_URL}/book/all-last-100`);
+      setFilteredBooks(response.data);
+      setPageNumber(0);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handlePageChange = ({ selected }) => {
+    setPageNumber(selected);
+  };
   console.log(books);
+
+  const reloadData = async () => {
+    try {
+      const response = await axios.get(`${BASE_URL}/book/all-last-100`);
+      setBooks(response.data);
+      setFilteredBooks(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  
 
   return (
     <div className="row marketing">
       <div className="col-lg-12">
-        <FormBook />
-        <BookSearchButton onSearch={(results) => setFilteredBooks(results)} />
+        <FormBook reloadData={reloadData} />
+        <BookSearchButton onSearch={handleSearch} />
+        <Button className="btn btn-secondary" onClick={handleReset}>
+          Mostrar Todos
+        </Button>
         <table className="table table-hover">
           <thead>
             <tr>
@@ -100,9 +133,10 @@ const TableBook = () => {
           previousLabel={"anterior"}
           nextLabel={"próxima"}
           pageCount={Math.ceil(filteredBooks.length / itemsPerPage)}
-          onPageChange={({ selected }) => setPageNumber(selected)}
+          onPageChange={handlePageChange}
           containerClassName={"pagination justify-content-center"}
           activeClassName={"active"}
+          forcePage={pageNumber}
         />
         {selectedBook && (
           <ModalBook

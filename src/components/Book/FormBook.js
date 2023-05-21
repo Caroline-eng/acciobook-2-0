@@ -7,7 +7,7 @@ import BookInserButton from "./BookInsertButton";
 import ResetButton from "./ResetButton";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const FormBook = () => {
+const FormBook = ({ reloadData }) => {
   const [bookData, setBookData] = useState(null);
   const [selectedAuthor, setSelectedAuthor] = useState("");
   const [selectedGenre, setSelectedGenre] = useState("");
@@ -16,6 +16,10 @@ const FormBook = () => {
     title: yup.string().required("Campo obrigatório"),
     description: yup.string().required("Campo obrigatório"),
   });
+
+  const handleInsertSuccess = () => {
+    reloadData();
+  };
 
   return (
     <Formik
@@ -71,8 +75,16 @@ const FormBook = () => {
               />
             </div>
             <div className="button-container">
-              <BookInserButton bookData={bookData} />
-              <ResetButton />
+              <div>
+                <BookInserButton
+                  className="insert-button"
+                  bookData={bookData}
+                  onInsertSuccess={handleInsertSuccess}
+                />
+              </div>
+              <div>
+                <ResetButton className="reset-button" />
+              </div>
             </div>
           </>
         </Form>

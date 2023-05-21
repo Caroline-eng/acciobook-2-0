@@ -36,9 +36,17 @@
 /* Estilos para os botões */
 .button-container button {
   padding: 8px;
-  font-size: 14px;
   margin-top: 2px;
-  margin-left: 2px;
+  display: flexbox;
+  font-size: 12px;
+}
+
+.insert-button {
+  flex: 1;
+}
+
+.reset-button {
+  flex: 1;
 }
 
 /* --------------------------------------------------*/
@@ -49,9 +57,10 @@
 }
 
 .search-container button {
-  margin-left: 5px;
+  left: 0px;
+  display: flex;
   padding: 8px;
-  font-size: 14px;
+  font-size: 10px;
 }
 
 .search-container input {
@@ -59,8 +68,24 @@
   padding: 8px;
   font-size: 10px;
   border: 1px solid #ddd;
+  display: flex;
   border-radius: 4px;
-  margin-left: 8px;
+
+  width: 200px;
+  left: 0px;
+  display: flex;
+}
+
+.btn-secondary {
+  padding: 8px;
+  font-size: 8px;
+  left: 0px;
+  display: flex;
+  margin-top: 10px;
+}
+
+.btn buscar {
+  display: flex;
 }
 
 /* --------------------------------------------------*/

@@ -50,7 +50,9 @@ const BookSearchButton = ({ onSearch }) => {
             value={textboxValue}
             onChange={handleTextboxChange}
           />
-          <Button onClick={handleSearchButtonClick}>Buscar</Button>
+          <Button className="btn buscar" onClick={handleSearchButtonClick}>
+            Buscar
+          </Button>
         </div>
       )}
     </div>

@@ -1,11 +1,26 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import { BASE_URL } from "../Api";
 
 ////
 const BookInsertButton = (props) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  useEffect(() => {
+    let timeoutId;
+
+    if (isSuccess) {
+      timeoutId = setTimeout(() => {
+        setIsSuccess(false);
+      }, 3000);
+    }
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [isSuccess]);
 
   const submitBookData = async () => {
     setIsSubmitting(true);
@@ -23,7 +38,8 @@ const BookInsertButton = (props) => {
           }
         );
         console.info(response);
-        window.location.reload();
+        setIsSuccess(true);
+        props.onInsertSuccess();
       } catch (error) {
         console.error("Deu erro! " + error);
       }
@@ -33,9 +49,12 @@ const BookInsertButton = (props) => {
   };
 
   return (
-    <Button className="form-btn" type="submit" onClick={submitBookData}>
-      Cadastrar
-    </Button>
+    <div>
+      {isSuccess && <p>Cadastro realizado com sucesso!</p>}
+      <Button className="form-btn" type="submit" onClick={submitBookData}>
+        Cadastrar
+      </Button>
+    </div>
   );
 };
 
