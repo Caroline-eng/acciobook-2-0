@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
+import { BASE_URL } from "../Api";
 
 const BookUpdateButton = ({ updatedBook, bookId, onClose }) => {
   const updateBookData = async (event) => {
@@ -16,7 +17,7 @@ const BookUpdateButton = ({ updatedBook, bookId, onClose }) => {
       const jsonData = JSON.stringify(data);
 
       const response = await axios.put(
-        `https://localhost:7197/book/update/${bookId}`,
+        `${BASE_URL}/book/update/${bookId}`,
         jsonData,
         {
           headers: {

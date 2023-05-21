@@ -2,6 +2,7 @@ import axios from "axios";
 import { ErrorMessage, Field, Formik } from "formik";
 import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
+import { BASE_URL } from "../Api";
 
 const GenreComboBox = ({ selectedGenre, setSelectedGenre }) => {
   const [genreOptions, setGenreOptions] = useState([]);
@@ -12,7 +13,7 @@ const GenreComboBox = ({ selectedGenre, setSelectedGenre }) => {
     setIsLoading(true);
 
     try {
-      axios.get("https://localhost:7197/genre/all").then((response) => {
+      axios.get(`${BASE_URL}/genre/all`).then((response) => {
         setGenreOptions(response.data);
       });
     } catch (error) {

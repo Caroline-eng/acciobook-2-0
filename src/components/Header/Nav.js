@@ -1,10 +1,14 @@
 import React from "react";
 import NavAdm from "./NavAdm";
+import NavUser from "./NavUser";
 
-const Nav = () => {
+const Nav = ({ userType }) => {
   return (
     <div>
-      <NavAdm />
+      {userType === 1 && <NavUser />}{" "}
+      {/* Renderiza NavUser se o userType for "user" */}
+      {userType === 0 && <NavAdm />}{" "}
+      {/* Renderiza NavAdm se o userType for "admin" */}
     </div>
   );
 };

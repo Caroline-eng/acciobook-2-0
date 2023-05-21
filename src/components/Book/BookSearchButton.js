@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
+import { BASE_URL } from "../Api";
 
 const BookSearchButton = ({ onSearch }) => {
   const [showTextbox, setShowTextbox] = useState(false);
@@ -19,7 +20,7 @@ const BookSearchButton = ({ onSearch }) => {
   const handleSearch = async (searchTerm) => {
     try {
       const response = await axios.get(
-        `https://localhost:7197/book/searchParams/${searchTerm}`
+        `${BASE_URL}/book/searchParams/${searchTerm}`
       );
       setApiResponse(response.data);
       onSearch(response.data);
@@ -40,6 +41,7 @@ const BookSearchButton = ({ onSearch }) => {
       {showTextbox && (
         <div>
           <input
+            id="textSearch"
             type="text"
             value={textboxValue}
             onChange={handleTextboxChange}

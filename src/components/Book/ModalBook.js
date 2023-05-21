@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import BookUpdateButton from "./BookUpdateButton";
+import { BASE_URL } from "../Api";
 
 const ModalBook = ({ show, book, onClose }) => {
   const [authorOptions, setAuthorOptions] = useState([]);
@@ -24,7 +25,7 @@ const ModalBook = ({ show, book, onClose }) => {
   useEffect(() => {
     const fetchOptions = async () => {
       try {
-        const response = await fetch("https://localhost:7197/genre/all");
+        const response = await fetch(`${BASE_URL}/genre/all`);
         const data = await response.json();
         const options = data.map((genre) => ({
           value: genre.id,
@@ -41,7 +42,7 @@ const ModalBook = ({ show, book, onClose }) => {
   useEffect(() => {
     const fetchOptions = async () => {
       try {
-        const response = await fetch("https://localhost:7197/author/all");
+        const response = await fetch(`${BASE_URL}/author/all`);
         const data = await response.json();
         const options = data.map((author) => ({
           value: author.id,

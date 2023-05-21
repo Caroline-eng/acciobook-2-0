@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
-
+import { BookRegistration } from "../Book/BookRegistration";
 import Modal from "react-bootstrap/Modal";
 import "./NavAdm.css";
 
@@ -55,7 +55,7 @@ const NavAdm = () => {
                 to="/book"
                 className="nav-link"
                 onClick={() => {
-                  openModal();
+                  openModal(<BookRegistration />);
                   handleNavLinkClick();
                 }}
               >

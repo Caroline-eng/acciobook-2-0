@@ -6,6 +6,7 @@ import BookSearchButton from "./BookSearchButton";
 import BookDeleteButton from "./BookDeleteButton";
 import ModalBook from "./ModalBook";
 import ReactPaginate from "react-paginate";
+import { BASE_URL } from "../Api";
 
 const TableBook = () => {
   const [books, setBooks] = useState([]);
@@ -20,9 +21,7 @@ const TableBook = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          "https://localhost:7197/book/all-last-100"
-        );
+        const response = await axios.get(`${BASE_URL}/book/all-last-100`);
         setBooks(response.data);
         setFilteredBooks(response.data);
       } catch (error) {
@@ -49,9 +48,7 @@ const TableBook = () => {
     setSelectedBook(null);
 
     try {
-      const response = await axios.get(
-        "https://localhost:7197/book/all-last-100"
-      );
+      const response = await axios.get(`${BASE_URL}/book/all-last-100`);
       setBooks(response.data);
       setFilteredBooks(response.data);
     } catch (error) {

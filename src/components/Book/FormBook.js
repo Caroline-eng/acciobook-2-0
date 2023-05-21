@@ -3,8 +3,8 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
 import AuthorComboBox from "../Author/AuthorComboBox";
 import GenreComboBox from "../Genre/GenreComboBox";
-import BookInserButton from "../BookInsertButton";
-import ResetButton from "../ResetButton";
+import BookInserButton from "./BookInsertButton";
+import ResetButton from "./ResetButton";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const FormBook = () => {

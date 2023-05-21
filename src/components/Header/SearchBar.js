@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { BASE_URL } from "../Api";
 
 const SearchBar = ({ setResults, setShowResults }) => {
   const [input, setInput] = useState("");
@@ -7,7 +8,7 @@ const SearchBar = ({ setResults, setShowResults }) => {
   const fetchData = async (value) => {
     try {
       const response = await axios.get(
-        `https://localhost:7197/book/searchParams/${value}`
+        `${BASE_URL}/book/searchParams/${value}`
       );
       const json = response.data;
       const mappedResults = json.map((book) => {

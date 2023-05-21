@@ -6,9 +6,9 @@
 
 .search-bar-container {
   background-color: transparent;
-  width: 700px;
   margin-left: 10px;
   align-items: center;
+  width: 700px;
 }
 
 .input-wrapper {
@@ -86,31 +86,27 @@
 }
 
 .navbar.expanded .navbar-collapse {
-  position: absolute; /* Posicionamento absoluto para sobrepor outros elementos */
-  top: 100%; /* Posicione abaixo da barra de navegação */
+  position: absolute;
+  top: 100%;
   left: 10;
   right: 20;
-  background-color: #f8f9fa; /* Defina a cor de fundo desejada */
-  padding: 10px; /* Adicione preenchimento conforme necessário */
-  border: 1px solid #dee2e6; /* Adicione borda conforme necessário */
+  background-color: #f8f9fa;
+  padding: 10px;
+  border: 1px solid #dee2e6;
 
-  z-index: 1; /* Ajuste o índice de sobreposição conforme necessário */
+  z-index: 1;
 }
 
-/* Estilos para os itens de navegação */
 .navbar.expanded .navbar-nav {
-  margin-top: 5px; /* Adicione margem conforme necessário */
+  margin-top: 5px; 
   background-color: transparent;
 }
 
-/* Estilos para os links de navegação */
 .navbar.expanded .navbar-nav .nav-link {
-  color: #333; /* Defina a cor do texto desejada */
+  color: #333; 
   background-color: transparent;
   font-size: 0.7rem;
-  margin-left: 5px;
-
-  /* Adicione outros estilos de link conforme necessário */
+  margin-left: 5px; 
 }
 
 .navbar-toggler-wrapper {
@@ -141,7 +137,22 @@
 }
 
 .logo-image {
-  width: 100px; /* Ajuste o valor para o tamanho desejado */
-  height: auto; /* Mantém a proporção da imagem */
+  width: 100px;
+  height: auto;
+  background-color: transparent;
+}
+
+.search-container {
+  margin-top: 10px;
+}
+
+#textSearch {
+  margin-top: 5px;
+}
+
+.logo-box {
+  position: fixed;
+
+  right: 0;
   background-color: transparent;
 }

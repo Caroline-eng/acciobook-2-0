@@ -1,10 +1,41 @@
 import React, { useState } from "react";
 import "./Login.css";
+import axios from "axios";
+import { BASE_URL } from "../Api";
 
-const Login = () => {
+const Login = ({ handleUserType, handleLoginSuccess }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      console.log("Email:", email);
+      console.log("Password:", password);
+
+      const response = await axios.post(
+        `${BASE_URL}/user/login/${email}/${password}`
+      );
+
+      console.log(response);
+
+      if (response.status === 200) {
+        const { userType } = response.data;
+        handleUserType(userType);
+        handleLoginSuccess();
+        console.log("Entrou! Tipo de usuário:", userType);
+      } else {
+        const errorData = response.data;
+        console.log(errorData);
+        setError(errorData.message);
+      }
+    } catch (error) {
+      console.error(error);
+      setError("Ocorreu um erro. Por favor, tente novamente mais tarde.");
+    }
+  };
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -14,36 +45,9 @@ const Login = () => {
     setPassword(event.target.value);
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    // Fazer a chamada à API para verificar as credenciais de login
-    try {
-      const response = await fetch("URL_DA_API_DE_LOGIN", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
-
-      if (response.ok) {
-        // Login bem-sucedido, redirecionar para a página principal
-        window.location.href = "/home";
-      } else {
-        // Login falhou, exibir mensagem de erro
-        const errorData = await response.json();
-        setError(errorData.message);
-      }
-    } catch (error) {
-      // Tratar erros de rede ou outras falhas na chamada da API
-      setError("Ocorreu um erro. Por favor, tente novamente mais tarde.");
-    }
-  };
-
   return (
     <div>
-      <h2>Login</h2>
+      <p>Login</p>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="email">Email:</label>

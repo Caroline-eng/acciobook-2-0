@@ -1,0 +1,19 @@
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f0f0f0;
+  padding: 1px;
+}
+
+.footer {
+  position: flex;
+  padding: 1px;
+  left: 0px;
+}
+
+.footer ul li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 10px;
+}

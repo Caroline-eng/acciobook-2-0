@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
+import { BASE_URL } from "../Api";
 
 const BookInsertButton = (props) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -12,7 +13,7 @@ const BookInsertButton = (props) => {
     if (bookData) {
       try {
         const response = await axios.post(
-          "https://localhost:7197/book/insert/",
+          `${BASE_URL}/book/insert/`,
           bookData,
           {
             headers: {

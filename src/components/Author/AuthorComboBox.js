@@ -2,6 +2,7 @@ import axios from "axios";
 import { ErrorMessage, Field } from "formik";
 import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
+import { BASE_URL } from "../Api";
 
 const AuthorComboBox = ({ selectedAuthor, setSelectedAuthor }) => {
   const [authorOptions, setAuthorOptions] = useState([]);
@@ -12,7 +13,7 @@ const AuthorComboBox = ({ selectedAuthor, setSelectedAuthor }) => {
     setIsLoading(true);
 
     try {
-      axios.get("https://localhost:7197/author/all").then((response) => {
+      axios.get(`${BASE_URL}/author/all`).then((response) => {
         setAuthorOptions(response.data);
       });
     } catch (error) {
