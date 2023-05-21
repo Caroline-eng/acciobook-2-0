@@ -35,6 +35,10 @@ const BookSearchButton = ({ onSearch }) => {
     setShowTextbox(false);
   };
 
+  console.log(apiResponse);
+  console.log(filteredBooks);
+  console.log(setFilteredBooks);
+
   return (
     <div className="search-container">
       <Button onClick={handleButtonClick}>Pesquisar</Button>

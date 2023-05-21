@@ -56,6 +56,8 @@ const TableBook = () => {
     }
   };
 
+  console.log(books);
+
   return (
     <div className="row marketing">
       <div className="col-lg-12">

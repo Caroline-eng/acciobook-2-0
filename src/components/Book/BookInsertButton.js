@@ -29,6 +29,7 @@ const BookInsertButton = (props) => {
       }
     }
     setIsSubmitting(false);
+    console.log(isSubmitting);
   };
 
   return (
