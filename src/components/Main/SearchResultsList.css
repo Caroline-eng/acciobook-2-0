@@ -1,23 +1,17 @@
 .results-list {
-  width: 50%;
-  height: 100%;
-  background-color: transparent;
-  display: flex;
-  box-shadow: 0px 0px 8px #ddd;
-  border-radius: 10px;
-  margin-top: 1rem;
-  max-height: 300px;
-  overflow-y: visible;
+  margin-top: 20px;
+}
+
+.results-list div {
+  background-color: #f5f5f5;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
 .results-zero {
-  width: 50%;
-  font-size: 0.8rem;
-  background-color: transparent;
-}
-
-.results-list p {
-  margin-right: 8px;
-  font-size: 15px;
-  margin-bottom: 0%;
+  background-color: #f5f5f5;
+  padding: 10px;
+  margin-top: 20px;
+  text-align: center;
+  color: #888;
 }

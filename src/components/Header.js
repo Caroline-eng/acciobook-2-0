@@ -49,6 +49,7 @@ const Header = ({ setResults, setShowResults }) => {
           <Login
             handleUserType={handleUserType}
             handleLoginSuccess={handleLoginSuccess}
+            closeModal={closeModal}
           />
         </Modal.Body>
       </Modal>

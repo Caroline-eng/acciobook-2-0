@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import { BookRegistration } from "../Book/BookRegistration";
 import Modal from "react-bootstrap/Modal";
-import "./NavAdm.css";
+import { AuthorRegistration } from "../Author/AuthorRegistration";
+import { GenreRegistration } from "../Genre/GenreRegistration";
+import { PublisherRegistration } from "../Publisher/PublisherRegistration";
+import { EditionRegistration } from "../Edition/EditionRegistration";
 
 const NavAdm = () => {
   const [isCollapsed, setIsCollapsed] = useState(true);
@@ -46,7 +49,14 @@ const NavAdm = () => {
         >
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link to="/edition" className="nav-link">
+              <Link
+                to="/edition"
+                className="nav-link"
+                onClick={() => {
+                  openModal(<EditionRegistration />);
+                  handleNavLinkClick();
+                }}
+              >
                 Cadastrar Edição
               </Link>
             </li>
@@ -63,18 +73,44 @@ const NavAdm = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/author" className="nav-link">
+              <Link
+                to="/author"
+                className="nav-link"
+                onClick={() => {
+                  openModal(<AuthorRegistration />);
+                  handleNavLinkClick();
+                }}
+              >
                 Cadastrar Autor
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/genre" className="nav-link">
+              <Link
+                to="/genre"
+                className="nav-link"
+                onClick={() => {
+                  openModal(<GenreRegistration />);
+                  handleNavLinkClick();
+                }}
+              >
                 Cadastrar Gênero
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/publisher" className="nav-link">
+              <Link
+                to="/publisher"
+                className="nav-link"
+                onClick={() => {
+                  openModal(<PublisherRegistration />);
+                  handleNavLinkClick();
+                }}
+              >
                 Cadastrar Editora
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/" className="nav-link">
+                Sair
               </Link>
             </li>
           </ul>

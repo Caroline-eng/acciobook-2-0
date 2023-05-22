@@ -3,7 +3,7 @@ import "./Login.css";
 import axios from "axios";
 import { BASE_URL } from "../Api";
 
-const Login = ({ handleUserType, handleLoginSuccess }) => {
+const Login = ({ handleUserType, handleLoginSuccess, closeModal }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -25,6 +25,7 @@ const Login = ({ handleUserType, handleLoginSuccess }) => {
         const { userType } = response.data;
         handleUserType(userType);
         handleLoginSuccess();
+        closeModal();
         console.log("Entrou! Tipo de usuário:", userType);
       } else {
         const errorData = response.data;
